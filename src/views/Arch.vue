@@ -19,6 +19,9 @@
           <v-col cols="12" class="pl-3 position-absolute" style="bottom: 0; right: 0;">
             {{ content.date }}
           </v-col>
+          <v-col cols="auto" class="pr-3 position-absolute text-right icon-discord">
+            <i class="fa-brands fa-discord" @click="openDiscord"></i>
+          </v-col>
         </v-row>
       </v-col>
       <v-col class="right-box">
@@ -113,6 +116,10 @@
       }, time );
   }
 
+  function openDiscord(){
+    window.open('https://bit.ly/redfoxgroup', '_blank')
+  }
+
   if (window.addEventListener) {window.addEventListener('DOMMouseScroll', wheel, false);}
     window.onmousewheel = document.onmousewheel = wheel;
 </script>
@@ -132,5 +139,15 @@
   }
   .left-box{
     border-right: 1px solid white;
+  }
+  .icon-discord{
+    bottom: 5px;
+    right: 0;
+    transition-duration: 500ms;
+  }
+  .icon-discord:hover{
+    bottom: 10px;
+    filter: drop-shadow(0px 3px 10px #000);
+    cursor: pointer;
   }
 </style>
