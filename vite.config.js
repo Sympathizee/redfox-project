@@ -8,7 +8,7 @@ import { fileURLToPath, URL } from 'node:url'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/redfox-project/',
+  base: '/redfox/',
   plugins: [
     vue({ 
       template: { transformAssetUrls }
