@@ -1,7 +1,6 @@
 <template>
   <v-container class="fill-height">
     <v-responsive class="align-center text-center fill-height">
-      <v-img height="250" src="@/assets/Homestay.gif" />
 
       <div class="text-body-2 font-weight-light mb-n1">Welcome to</div>
 
