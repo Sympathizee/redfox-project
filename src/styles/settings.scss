@@ -1,0 +1,12 @@
+/**
+ * src/styles/settings.scss
+ *
+ * Configures SASS variables and Vuetify overwrites
+ */
+
+// https://vuetifyjs.com/features/sass-variables/`
+@use 'vuetify/settings' with (
+	$tooltip-background-color: rgba(255, 255, 255, 1),
+	$tooltip-text-color: #b21c1c,
+	$tooltip-font-size: 14px
+);

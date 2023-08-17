@@ -1,0 +1,48 @@
+@font-face {
+	font-family: 'Eras';
+	src: url(../assets/font/eras-demi-587182767b329.otf) format('opentype');
+	font-weight: default;
+    font-style: normal;
+}
+@font-face {
+	font-family: 'Eras';
+	src: url(../assets/font/eras-bold-5871820c913a2.otf) format('opentype');
+	font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+	font-family: 'Eras';
+	src: url(../assets/font/eras-light-5871822a2e706.otf) format('opentype');
+	font-weight: 200;
+	font-style: normal;
+}
+
+html, body .redfox-bg{
+	background-color: #b21c1c!important;
+}
+
+.eras{
+	font-family: 'Eras';
+	font-weight: normal;
+}
+.eras-bold{
+	font-family: 'Eras';
+	font-weight: bold;
+}
+.eras-thin{
+	font-family: 'Eras';
+	font-weight: 200;
+}
+
+.test-1{
+	background-color: red;
+}
+.test-2{
+	background-color: blue;
+}
+.test-3{
+	background-color: aquamarine;
+}
+.test-4{
+	background-color: pink;
+}
