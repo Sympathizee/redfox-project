@@ -1,6 +1,6 @@
 <template>
   <v-container class="ml-10" fluid>
-    <v-row no-gutters class="main-box" v-for="content in contents" :style="content.style">
+    <v-row no-gutters class="main-box" v-for="content in contents" :style="content.style" data-aos="fade-up" data-aos-duration="1500">
       <v-col cols="3" class="left-box">
         <v-row no-gutters class="text-content position-relative h-100">
           <v-col cols="12" class="px-3 pt-3 pb-0 text-right">
@@ -97,31 +97,33 @@
     },
   ]
 
-  function wheel(event) {
-      var delta = 0;
-      if (event.wheelDelta) {(delta = event.wheelDelta / 120);}
-      else if (event.detail) {(delta = -event.detail / 3);}
+  // function wheel(event) {
+  //     var delta = 0;
+  //     if (event.wheelDelta) {(delta = event.wheelDelta / 120);}
+  //     else if (event.detail) {(delta = -event.detail / 3);}
 
-      handle(delta);
-      // if (event.preventDefault) {(event.preventDefault());}
-      // event.returnValue = false;
-  }
+  //     handle(delta);
+  //     // if (event.preventDefault) {(event.preventDefault());}
+  //     // event.returnValue = false;
+  // }
 
-  function handle(delta) {
-      var time = 1000;
-      var distance = 300;
+  // function handle(delta) {
+  //     var time = 1000;
+  //     var distance = 300;
 
-      $('html, body').stop().animate({
-          scrollTop: $(window).scrollTop() - (distance * delta)
-      }, time );
-  }
+  //     $('html, body').stop().animate({
+  //         scrollTop: $(window).scrollTop() - (distance * delta)
+  //     }, time );
+  // }
+  
+  // if (window.addEventListener) {window.addEventListener('DOMMouseScroll', wheel, false);}
+  //   window.onmousewheel = document.onmousewheel = wheel;
 
   function openDiscord(){
     window.open('https://bit.ly/redfoxgroup', '_blank')
   }
 
-  if (window.addEventListener) {window.addEventListener('DOMMouseScroll', wheel, false);}
-    window.onmousewheel = document.onmousewheel = wheel;
+  
 </script>
 <style>
   .text-content{

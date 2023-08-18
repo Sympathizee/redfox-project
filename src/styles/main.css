@@ -21,6 +21,10 @@ html, body .redfox-bg{
 	background-color: #b21c1c!important;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 .eras{
 	font-family: 'Eras';
 	font-weight: normal;

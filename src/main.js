@@ -12,8 +12,9 @@ import { createApp } from 'vue'
 
 // Plugins
 import { registerPlugins } from '@/plugins'
-
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init({once: true});
 
 import '@/styles/main.css'
 const app = createApp(App)

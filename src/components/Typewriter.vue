@@ -22,7 +22,42 @@
 	var cIdx = 0;
 	var typer = ref('');
 	var typeDelay = 100;
-	var textArr = ['group', props.type];
+	var textArr = props.type === 'redfox'? 
+	[
+		'group', 
+		'elegance', 
+		'experience', 
+		'quality', 
+		'symphony', 
+		"artistry",
+		"exquisite",
+		"sophistication",
+		"craftsmanship",
+		"prestige",
+		"aesthetics",
+		"refinement",
+		"luxury",
+		"perfection",
+		"curation",
+		"mastery",
+		"eloquence",
+		"sublime",
+		"glamour",
+		"distinction",
+		"redefinition",
+		"echelon",
+		"innovation",
+		"resplendent",
+		"grandeur",
+		"serenity",
+		"legacy",
+		"artisanal",
+		"finery",
+		"ethereal",
+		"harmonious",
+	] 
+	: 
+	['group', props.type];
 	var currentWord = 1;
 	var typing = false;
 	var exiting = false;
@@ -47,8 +82,10 @@
 			cIdx += 1;
 			setTimeout(typeText, typeDelay, text);
 		}else{
+			var home = 1;
+			if(props.type === 'redfox') home = 0
 			typing = false;
-			setTimeout(eraseText, typeDelay + 2000 + (3000 * currentWord));
+			setTimeout(eraseText, typeDelay + 2000 + (3000 * currentWord * home));
 		}
 	}
 	// function to erase
@@ -65,7 +102,13 @@
 				exiting = false;
 				router.push(newPath);
 			}
-			currentWord = currentWord > 0? 0 : 1;
+			if(props.type === 'redfox'){
+				var arrLen = textArr.length;
+				var newWord = Math.floor(Math.random() * arrLen);
+				currentWord = currentWord === newWord? newWord == arrLen-1? newWord - 1 : newWord + 1 : newWord
+			}else{
+				currentWord = currentWord > 0? 0 : 1;
+			}
 			var text = textArr[currentWord];
 			setTimeout(typeText, typeDelay, text);
 		}
@@ -83,7 +126,11 @@
 
 	onMounted(() => {
 		// appearPointer();
-		setTimeout(typeText, typeDelay, props.type);
+		if(props.type !== 'redfox'){
+			setTimeout(typeText, typeDelay, props.type);
+		}else{
+			setTimeout(typeText, typeDelay, textArr[Math.floor(Math.random() * textArr.length)]);
+		}
 	});
 </script>
 <style scoped>

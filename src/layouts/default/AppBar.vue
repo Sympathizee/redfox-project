@@ -24,40 +24,42 @@
   const currentRouteName = computed(() => route.name)
   const sections = [
     {
-      name: '',
+      name: 'Redfox',
       icon: '',
-      href: 'architecture',
-      active: computed(() => route.name === ''? true : false),
-      style: {},
+      href: 'redfox/',
+      active: false,
+      style: {backgroundSize:'cover',backgroundPosition:'center',backgroundImage:"url('https://media.discordapp.net/attachments/1131603488380555297/1141712230900060271/R_1.png?width=482&height=482')"},
     },
     {
       name: 'Architecture',
       icon: 'mdi-account-hard-hat',
-      href: 'architecture',
+      href: 'redfox/architecture/',
       active: computed(() => route.name === 'architecture'? true : false),
       style: {},
     },
     {
       name: 'Automotive',
       icon: 'mdi-car',
-      href: 'automotive',
+      href: 'redfox/automotive/',
       active: computed(() => route.name === 'automotive'? true : false),
       style: {},
     },
     {
       name: 'Homestay',
       icon: 'mdi-home-account',
-      href: 'homestay',
+      href: 'redfox/homestay/',
       active: computed(() => route.name === 'homestay'? true : false),
       style: {},
     },
   ];
-  console.log(sections);
   const emit = defineEmits(['moveToRoute']);
 
   function goTo(path){
-    if(currentRouteName.value !== path.href){
-      emit('moveToRoute', '/' + path.href);
+    if(currentRouteName.value !== path.name.toLowerCase()){
+      window.scrollTo(0, 0);
+      setTimeout(() => {
+        emit('moveToRoute', '/' + path.href);
+      }, 500);
     }
   }
 

@@ -3,7 +3,12 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 const routes = [
   {
-    path: '/homestay',
+    path: '/redfox/',
+    name: 'redfox',
+    component: () => import('@/views/Redfox.vue'),
+  },
+  {
+    path: '/redfox/homestay/',
     name: 'homestay',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
@@ -11,7 +16,7 @@ const routes = [
     component: () => import(/* webpackChunkName: "home" */ '@/views/Homestay.vue'),
   },
   {
-    path: '/architecture',
+    path: '/redfox/architecture/',
     name: 'architecture',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
@@ -19,7 +24,7 @@ const routes = [
     component: () => import('@/views/Arch.vue'),
   },
   {
-    path: '/automotive',
+    path: '/redfox/automotive/',
     name: 'automotive',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
